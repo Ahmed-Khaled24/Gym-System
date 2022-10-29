@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 
 const clientSchema = mongoose.Schema({
     name: String,
+    phone: String,
     registeredDate: Date,
     renewDate: Date,
     daysLeft: Number,
@@ -12,4 +13,4 @@ const clientSchema = mongoose.Schema({
     },
 });
 
-mongoose.model('clients', clientSchema);
+mongoose.model('Client', clientSchema);
