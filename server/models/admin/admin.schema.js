@@ -7,7 +7,11 @@ const adminSchema = mongoose.Schema({
     registeredDate: Date, 
     active: {
         type: Boolean,
-        default: true,
+        default: false,
+    },
+    super: {
+        type: Boolean,
+        default: false,
     }
 })
 
