@@ -4,6 +4,7 @@ import './models/log/log.schema.js'
 import {createServer} from 'http'
 import api from './api.js'
 import {connectMongo} from './services/mongo.js'
+import './services/passport.js'
 
 async function startServer() {
     const server = createServer(api);
