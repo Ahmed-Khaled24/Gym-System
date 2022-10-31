@@ -99,6 +99,18 @@ async function degradeAdmin(req, res){
     }
 }
 
+function logout (req, res){
+    req.logout( (err) => {
+        if(err){
+            return res.status(500).json({
+                status: 'failure',
+                message: err.message,
+            });
+        }
+    });
+    return res.status(200).json({ status: 'success'})
+}
+
 export {
     getAllAdmins,
     addNewAdmin, 
@@ -106,4 +118,5 @@ export {
     deactivateAdmin,
     promoteAdmin,
     degradeAdmin,
+    logout
 }
