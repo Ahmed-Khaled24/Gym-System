@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 
 const logSchema = mongoose.Schema({
-    amount: Number,
+    amount: Number, // money in egp
+    durationInMonths: Number,
+    type: String, // new subscription or renew subscription
     paymentMethod: String,
     date: {
         type: Date,
@@ -10,6 +12,10 @@ const logSchema = mongoose.Schema({
     client: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Client'
+    },
+    admin: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Admin'
     }
 })
 
