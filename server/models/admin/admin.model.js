@@ -6,6 +6,10 @@ async function db_getAllAdmins(){
     return await Admin.find({});
 }
 
+async function db_getAdminByLoginId(loginId){
+    return await Admin.findOne({loginId: loginId});
+}
+
 async function db_addNewAdmin(admin){
     return await Admin.create(admin);
 }
@@ -37,5 +41,6 @@ export {
     db_getAdminById,
     db_activateAdmin,
     db_promoteAdmin,
-    db_degradeAdmin
+    db_degradeAdmin,
+    db_getAdminByLoginId,
 }
